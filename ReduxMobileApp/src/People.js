@@ -6,7 +6,7 @@ import { bindActionCreators } from 'redux'
 import { fetchPeople } from './Actions'
 
 class People extends React.Component {
-  componentWillMount(){
+  componentDidMount(){
     this.props.fetchPeople()
   }
   render(){

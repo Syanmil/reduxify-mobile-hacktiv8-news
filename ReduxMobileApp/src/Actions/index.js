@@ -1,7 +1,7 @@
-import { FETCH_NEWS } from '../Constants'
+import { FETCH_NEWS, FETCH_PEOPLE } from '../Constants'
 
-export const sendData = (data) => {type: FETCH_NEWS, data}
-export const sendPeople = (People) => {type: FETCH_PEOPLE, people}
+export const sendData = (data) => ({type: FETCH_NEWS, data});
+export const sendPeople = (people) => ({type: FETCH_PEOPLE, people});
 
 export const fetchData = (data) => {
   return (dispatch)=> {
@@ -11,10 +11,10 @@ export const fetchData = (data) => {
       .then(json => dispatch(sendData(json.hits)))
   }
 }
-export const fetchPeople = (people) => {
+export const fetchPeople = () => {
   return (dispatch) => {
-    fetch('https://swapi.co/api/people')
-      .then(res => res.json())
-      .then(items => dispatch(sendPeople(items.results)))
+    fetch(`https://swapi.co/api/people`)
+      .then(respone => respone.json())
+      .then(json => dispatch(sendPeople(json.results)))
   }
 }

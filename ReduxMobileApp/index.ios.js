@@ -1,23 +1,20 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   AppRegistry,
-  Text,
   View
 } from 'react-native';
-import { App } from './src/App'
-import { styles } from './styles/styles'
+import { Provider } from 'react-redux';
+import { store } from './src/Store/storeConfig'
+import { App } from './src/App';
+import { styles } from './src/styles/styles';
 
 export default class ReduxMobileApp extends Component {
   render() {
     return (
-      <View>
-        <App />
+      <View style={{width: '100%', height: '100%'}}>
+        <Provider store={ store }>
+          <App />
+        </Provider>
       </View>
     );
   }

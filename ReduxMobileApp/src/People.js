@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text, Button } from 'react-native'
-import { styles } from '../styles/styles'
+import { styles } from './styles/styles'
 
 export class People extends React.Component {
   constructor(props){

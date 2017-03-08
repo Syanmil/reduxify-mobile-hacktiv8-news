@@ -1,6 +1,6 @@
 import React from 'react'
 import { Text, View, ListView } from 'react-native'
-import { styles } from '../../styles/styles'
+import { styles } from '../styles/styles'
 
 export const List = (props) => {
   return (

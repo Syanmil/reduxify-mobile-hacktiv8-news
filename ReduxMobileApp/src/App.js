@@ -1,7 +1,7 @@
 import React from 'react'
 import { News } from './News'
 import { People } from './People'
-import { styles } from '../styles/styles'
+import { styles } from './styles/styles'
 import { Navigator, View, Text } from 'react-native'
 
 export class App extends React.Component {

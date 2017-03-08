@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, TextInput } from 'react-native'
-import { styles } from '../../styles/styles'
+import { styles } from '../styles/styles'
 
 export const Filter = (props) => {
   return (

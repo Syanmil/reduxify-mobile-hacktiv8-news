@@ -1,3 +1,4 @@
 export { Header } from './Header'
-export { List } from './List'
-export { Filter } from './Filter'
+import List from './List'
+import Filter from './Filter'
+export { List, Filter }

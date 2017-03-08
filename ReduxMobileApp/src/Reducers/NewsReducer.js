@@ -12,10 +12,16 @@ let data = [
     url: 'https://github.com/reactjs/redux',
     author: 'Dan Abramov, Andrew Clark',
     objectID: 1
+  },
+  {
+    title: 'StarGate',
+    url: 'syanmil.com',
+    author: 'Syanmil',
+    objectID: 2
   }
 ]
 
-export default (state = [], action) => {
+export default (state = data, action) => {
   switch (action.type) {
     case FILTER_NEWS:
         if (action.keyword){
@@ -24,10 +30,10 @@ export default (state = [], action) => {
             state.filter((item) => cut.test(item.title))
           )
         }
-        return data
+        return state
     case FETCH_NEWS:
         return action.data
     default:
-      return data
+      return state
   }
 }

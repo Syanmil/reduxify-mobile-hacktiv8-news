@@ -1,18 +1,13 @@
 import React from 'react'
 import { News } from './News'
-import { People } from './People'
+import People from './People'
 import { styles } from './styles/styles'
 import { Navigator, View, Text } from 'react-native'
 
 export class App extends React.Component {
-  constructor(){
-    super()
-    this.sceneRender = this.sceneRender.bind(this)
-  }
   sceneRender(route, navigator){
     switch (route.scene) {
       case 'news':
-      console.log(this);
         return (<News
           scene={route.scene}
           goToPeople={() => this.goToPeople(navigator)}/>)
@@ -39,10 +34,9 @@ export class App extends React.Component {
       <View style={{height: '100%', width: '100%'}}>
         <Navigator
           initialRoute= {{scene: 'news'}}
-          renderScene= {this.sceneRender}
+          renderScene= {this.sceneRender.bind(this)}
           />
       </View>
-
     )
   }
 }
